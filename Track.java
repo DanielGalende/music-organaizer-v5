@@ -1,4 +1,4 @@
-/**
+ /**
  * Store the details of a music track,
  * such as the artist, title, and file name.
  * 
@@ -14,6 +14,8 @@ public class Track
     // Where the track is stored.
     private String filename;
     
+    private int playCount;
+    
     /**
      * Constructor for objects of class Track.
      * @param artist The track's artist.
@@ -22,6 +24,7 @@ public class Track
      */
     public Track(String artist, String title, String filename)
     {
+        playCount= 0;
         setDetails(artist, title, filename);
     }
     
@@ -33,6 +36,7 @@ public class Track
      */
     public Track(String filename)
     {
+        playCount = 0;
         setDetails("unknown", "unknown", filename);
     }
     
@@ -64,12 +68,12 @@ public class Track
     }
         
     /**
-     * Return details of the track: artist, title and file name.
+     * Return details of the track: artist, title and file name, count.
      * @return The track's details.
      */
     public String getDetails()
     {
-        return artist + ": " + title + "  (file: " + filename + ")";
+        return artist + ": " + title + "  (file: " + filename + ")" + playCount;
     }
     
     /**
@@ -85,4 +89,16 @@ public class Track
         this.filename = filename;
     }
     
+    /**
+     * Cuenta las veces que se ha reproducido una cancion.
+     */
+    public void resetCount (){
+        playCount = 0;
+        
+    } 
+    
+    public void incrementPlayCount(){
+        playCount += 1;
+        
+    }
 }
