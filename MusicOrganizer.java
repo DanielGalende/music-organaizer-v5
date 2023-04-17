@@ -188,9 +188,15 @@ public class MusicOrganizer
         }
     }
     
-    public void resetAllMethods(){
+    public void resetAllCounts(){
         for (Track track : tracks) {
             track.resetCount();
+        }
+    }
+    
+    public void findGenre(){
+        for (Track track : tracks){
+            track.getGenero();
         }
     }
 }

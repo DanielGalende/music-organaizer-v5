@@ -16,6 +16,8 @@ public class Track
     
     private int playCount;
     
+    private String genero;
+    
     /**
      * Constructor for objects of class Track.
      * @param artist The track's artist.
@@ -67,13 +69,17 @@ public class Track
         return filename;
     }
         
+    public String getGenero(){
+        return genero;
+    }
+    
     /**
      * Return details of the track: artist, title and file name, count.
      * @return The track's details.
      */
     public String getDetails()
     {
-        return artist + ": " + title + "  (file: " + filename + ")" + playCount;
+        return artist + ": " + title + "  (file: " + filename + ")" + " Recuento: " +  playCount + " Género: " + genero;
     }
     
     /**
@@ -87,6 +93,11 @@ public class Track
         this.artist = artist;
         this.title = title;
         this.filename = filename;
+        
+    }
+    
+    private void setOtroGenero(String genero){
+        this.genero = genero;
     }
     
     /**
