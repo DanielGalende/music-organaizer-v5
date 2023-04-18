@@ -194,9 +194,11 @@ public class MusicOrganizer
         }
     }
     
-    public void findGenre(){
-        for (Track track : tracks){
-            track.getGenero();
+    public void findGenre(int index) {
+        if (indexValid(index)){
+            Track track = tracks.get(0);
+            System.out.println(track.getGenero());
+            
         }
     }
 }
